@@ -1,5 +1,5 @@
 # DNA-Genetic-Python-Scripts-CTF
-a code written by me to decode the DNA Cipher (Genetic ) CTF challenge in which it is in the form of
+This can be used to Encode / Decode the DNA / CODON codes in CTF.
 ====================================================================================================================
 
 GAAACCACATATGATAAAACATACAAATTTGAGACATTTGAACACAAAGAAACCACAGACATTGA
