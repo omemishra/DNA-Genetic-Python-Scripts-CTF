@@ -66,24 +66,32 @@ mapping = {
 'TTT':'.'
 
 	
-	
 }
 
 
+encode_string = 'OME'
 
+decode_string = 'GGAGCGCTG' 
 
+inverted_mapping = dict(zip(mapping.values(), mapping.keys()))
 
-string = 'GAGTTGACTATGATTACATTGCGAATGCCATTGACTAAACCCACATTGAAACCACATATGATAAAACATACAAATTTGAGACATTTGAACACAAAGAAACCACAGACATTGATAAAAATCCCAAGTAGTCGATTGAATATGAGAATCACGTTGCATACTAGACAGTTGAGACAGTTGCCCACACACCGATTGCATACAAATAGAATGCCACAGTTGCAGATGATAACATTGCACAAAATCAATATGATATTGCATACACCTCATTTGCATATGTTGATAAAAAGGACATTGCATACTAGACAGTTGACACCCACAATCTTGATAATGCACACATTGAGTATGATCACGTTGAAACCCACAATCACGACACACCAGTTGACAATCAATACGAAAATAACATTGATCTTCCATCATACTTCGACCAGTTCTACGTCACATACTTCAATCAGGTTGCAGATTAGAAATACACACATAAAAATCTTGACCAAACACTTGACCCACATGATATTGACTATGATAACATTGGATGGAGCACTGGGTTTGAACAGACACAATCAGTTGATGACCTTGATTCACACACGATTGACACCCACAATCTTGAGATTGAATATGATCCATTTGAGGATCATGCCGTTGCCGACTCGATTGAGATTGAAAATATTGCCGCACAGACATAGAATCACGTTGCATACTACACAGACATTGATAATGCCCAGAACATTGATCAAAATAACACAGTTT' 
-
-def decode_dna( string ):
+def decode_dna( decode_string ):
 
     pieces = []
-    for i in range( 0, len(string), 3 ):
-        piece =  string[i:i+3]
+    for i in range( 0, len(decode_string), 3 ):
+        piece =  decode_string[i:i+3]
         # pieces.append()
         pieces.append( mapping[piece] )
 
     return "".join(pieces)
 
+def encode_dna(encode_string):
+    pieces = []
+    for i in encode_string:
+        piece =  inverted_mapping[i]
+        pieces.append(piece)
+    return "".join(pieces)
   
-print decode_dna(string)
+print 'Decoded String is:- '+ decode_dna(decode_string)
+print 'Encoded DNA String is:- '+ encode_dna(encode_string)
+
